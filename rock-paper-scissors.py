@@ -2,10 +2,11 @@ import random
 
 emojis = { 'r': '🪨', 'p': '📃','s': '✂️' }
 
+wins = 0
+lose = 0
+tie = 0
 
 while True:
-    wins = 0
-    lose = 0
     moves = ("r","p","s")
     player_move = str(input("Rock,Paper or Scissors (r/p/s): ")).lower()
     if player_move not in moves:
@@ -19,6 +20,8 @@ while True:
     
     if player_move == computermove:
         print("Tie")
+        tie += 1
+        
     elif( 
         (player_move == 'r' and computermove == 's') or 
         (player_move == 's' and computermove == 'p') or 
@@ -31,7 +34,8 @@ while True:
         
     show_result = input("Wanna check the scores(y/n): ")
     if show_result == 'y':
-        print(f"your won {wins} matches and you lost {lose} matches")
+        print(f"your won {wins} match,You lost {lose} match,You have Tied {tie} match")
+        continue
         
     
 
@@ -40,4 +44,5 @@ while True:
     if should_continue == 'n':
         print("Ler's play any other time!!")
         break 
+
     
